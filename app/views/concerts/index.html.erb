@@ -3,8 +3,9 @@
 <h2> Later this month  </h2>
 <% @concerts.each do |concert| %>
 	<% li_color = ["success","info","warning","danter"] %>
-	<ul class="list-group">
-		<li class="list-group-item list-group-item-<%= li_color.sample %>"> Band: <%= concert.band %>, City: <%= concert.city %>, Venue: <%= concert.venue %>, Price: $<%= concert.price %>  </li>
-		
-	</ul>
+	<% if concert.date != Date.today %>
+		<ul class="list-group">
+			<li class="list-group-item list-group-item-<%= li_color.sample %>"> Band: <%= concert.band %>, City: <%= concert.city %>, Venue: <%= concert.venue %>, Price: $<%= concert.price %>, Date: <%= concert.date.strftime('%d/%m/%Y') %>  </li>	
+		</ul>
+	<% end %>
 <% end %>
