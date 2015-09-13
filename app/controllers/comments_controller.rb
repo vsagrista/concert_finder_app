@@ -7,8 +7,11 @@ class CommentsController < ApplicationController
 		concert = Concert.find(params[:concert_id])
 		comment = Comment.new(comment: params[:comment][:comment])
 		concert.comments << comment
-		concert.save
-		redirect_to :controller => 'concerts', :action => 'show', :id =>params[:concert_id]
+		if concert.save
+			redirect_to :controller => 'concerts', :action => 'show', :id =>params[:concert_id]
+		else 
+			render :error
+		end
 	end
 
 end
