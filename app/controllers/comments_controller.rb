@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
 		comment = Comment.new(comment: params[:comment][:comment])
 		concert.comments << comment
 		concert.save
+		redirect_to :controller => 'concerts', :action => 'show', :id =>params[:concert_id]
 	end
 
 end
