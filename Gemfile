@@ -32,6 +32,8 @@ gem "twitter-bootstrap-rails"
 
 gem "faker"
 
+gem "pry"
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

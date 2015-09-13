@@ -1,0 +1,7 @@
+<%= @id = params[:id] %>
+<%=  field_for @comment do |f| %>
+	<%= f.label :Comments %>
+	<%= f.text_area :comment %>
+	<%= f.hidden_field :account_id, :value => params[:id] %>
+	<%= f.submit "Add Comment" %>
+<% end %>
