@@ -1,0 +1,10 @@
+<h1> This are the concerts for you, cheaper than $<%= @max_price %></h2>
+
+<% @concerts.each do  |concert| %>
+	<% if concert.price <= @max_price.to_i %>
+	  <p> Band: <%= concert.band %>, price: $<%= concert.price %></p>
+	  <% end %>
+<% end %>
+
+<%= link_to 'Search for another amount', :back %><br>
+<%= link_to "Back to the home page", concerts_path %><br>

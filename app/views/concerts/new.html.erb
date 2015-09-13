@@ -1,0 +1,6 @@
+<h1>How much are you willing to spend?</h1>
+<%= form_for @concert do |f|%>
+	<%= f.label :MaxPrice %>
+	<%= f.number_field :price %>
+	<%= f.submit "Find Cheap Concerts!" %>
+<% end %>

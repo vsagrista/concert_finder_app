@@ -7,11 +7,13 @@ class ConcertsController < ApplicationController
 		@concert = Concert.find(params[:id])
 	end
 
-	def edit
-
+	def new
+		@concert = Concert.new
 	end
 
 	def create
+		@max_price = params[:concert][:price]
+		@concerts = Concert.all.order(:price)
 		
 	end
 	

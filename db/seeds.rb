@@ -5,6 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+	Concert.destroy_all
+	Comment.destroy_all
 	Concert.create(band: Faker::Hacker.abbreviation, city: Faker::Address.city, venue: Faker::Book.title, date: Date.today, price: Faker::Number.number(2), description: Faker::Lorem.sentence )
 
 10.times do |i|

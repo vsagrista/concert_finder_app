@@ -1,5 +1,6 @@
 <h1> These are the concerts so far: </h1>
 <%= render partial: 'shared/header' %>
+<%= link_to "Find deals", new_concert_path %>
 <h2> Later this month  </h2>
 <% @concerts.each do |concert| %>
 	<% li_color = ["success","info","warning","danter"] %>
