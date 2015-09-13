@@ -1,9 +1,20 @@
 <h1> Today <%= @concert.band %> is playing in <%= @concert.venue %>, <%= @concert.city %> </h1>
 <h2> About <%= @concert.band %> </h2>
-
 <p><%= @concert.description %> </p>
+<%= link_to "Back to the home page", concerts_path %><br>
+<% if @concert.comments.length > 0 %>
+	<h2>Concert Comments: <%= @concert.comments.length %><h2>
+	<% @concert.comments.each do |comment| %>
+	<ul>
+		<li><%= comment.comment %></li>
+	</ul>
+	<% end %>
+	<% else %>
+	<h2>There are no comments yet!<h2>
+<% end %>
+<a href="http://localhost:3000/concerts/<%=@concert.id%>/comments/new">Add a comment!</a>
 
-<%= link_to "Back to the home page", concerts_path %>
+
 
 
 
